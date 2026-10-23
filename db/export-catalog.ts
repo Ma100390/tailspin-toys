@@ -60,7 +60,7 @@ function mapCatalogGame(game: Game): CatalogGame {
         category: game.category?.name ?? UNKNOWN_CATEGORY,
         publisher: game.publisher?.name ?? UNKNOWN_PUBLISHER,
         ...(game.starRating !== null ? { starRating: game.starRating } : {}),
-        ratingLabel: formatStarRating(game.starRating),
+        ratingLabel: game.starRating === null ? 'Not yet rated' : formatStarRating(game.starRating),
     };
 }
 
